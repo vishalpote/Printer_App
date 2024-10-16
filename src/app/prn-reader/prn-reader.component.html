@@ -1,0 +1,31 @@
+<!-- <div class="container">
+  <h1>Upload and Modify PRN File</h1>
+  <input type="file" id="fileInput" accept=".prn" (change)="onFileSelected($event)" />
+  <pre *ngIf="modifiedFileContent">{{ modifiedFileContent }}</pre>
+</div> -->
+
+
+
+<div class="container">
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+ 
+    <div>
+      <label for="empName">Employee Name:</label>
+      <input id="empName" formControlName="empName" type="text"  />
+    </div>
+
+    <div>
+      <label for="empId">Employee ID:</label>
+      <input id="empId" formControlName="empId" type="text" />
+    </div>
+
+  
+    <div>
+      <label for="phone">DepartMent:</label>
+      <input id="phone" formControlName="empDept" type="text"  />
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" [disabled]="employeeForm.invalid">Submit</button>
+  </form>
+</div>
